@@ -3,45 +3,46 @@ import { slot4BrandConfig } from '@/editable/theme/brand.config'
 export const globalContent = {
   site: {
     name: slot4BrandConfig.siteName,
-    tagline: slot4BrandConfig.tagline || 'Independent reading platform',
+    tagline: slot4BrandConfig.tagline || '',
     domain: slot4BrandConfig.domain,
     baseUrl: slot4BrandConfig.baseUrl,
   },
   nav: {
-    tagline: 'News, media, and public updates',
+    tagline: 'Premium media distribution',
     primaryLinks: [
-      { label: 'Latest Updates', href: '/updates' },
-      { label: 'News Media', href: '/updates?category=news-media' },
-      { label: 'Press Releases', href: '/updates?category=press-release' },
-      { label: 'Contact', href: '/contact' },
+      { label: 'Newsroom', href: '/mediaDistribution' },
+      { label: 'Services', href: '/article' },
+      { label: 'Contact Us', href: '/contact' },
+      { label: 'About Us', href: '/about' },
     ],
     actions: {
-      primary: { label: 'Browse updates', href: '/updates' },
-      secondary: { label: 'Submit', href: '/contact' },
+      primary: { label: 'Register', href: '/signup' },
+      secondary: { label: 'Sign In', href: '/login' },
     },
   },
   footer: {
-    tagline: 'Newsroom updates and distributed media',
-    description: 'A flexible media distribution surface for announcements, press coverage, public updates, and dynamic news categories.',
+    tagline: 'Luxury editorial distribution for modern media teams.',
+    description: 'Distribute stories, publish announcements, and organize media-ready updates through a refined editorial experience built for visibility and trust.',
     columns: [
       {
-        title: 'Explore',
+        title: 'Services',
         links: [
-          { label: 'Latest Updates', href: '/updates' },
-          { label: 'News Media', href: '/updates?category=news-media' },
-          { label: 'Business News', href: '/updates?category=business' },
-          { label: 'Press Releases', href: '/updates?category=press-release' },
+          { label: 'Media Distribution', href: '/mediaDistribution' },
+          { label: 'Articles', href: '/article' },
+          { label: 'Image Desk', href: '/image' },
+          { label: 'Document Library', href: '/pdf' },
         ],
       },
       {
-        title: 'Site',
+        title: 'Company',
         links: [
           { label: 'About', href: '/about' },
           { label: 'Contact', href: '/contact' },
+          { label: 'Search', href: '/search' },
         ],
       },
     ],
-    bottomNote: 'Built for fast, flexible, and category-led media distribution.',
+    bottomNote: 'Designed for thoughtful releases, clearer reach, and stronger public presence.',
   },
   commonLabels: {
     readMore: 'Read more',
