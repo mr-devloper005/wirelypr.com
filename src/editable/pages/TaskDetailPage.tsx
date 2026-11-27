@@ -152,7 +152,6 @@ function BackLink({ task }: { task: TaskKey }) {
 
 function ArticleDetail({ task, post, related, comments }: { task: TaskKey; post: SitePost; related: SitePost[]; comments: Array<{ id: string; name: string; comment: string; createdAt: string }> }) {
   const images = getImages(post)
-  const published = post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : ''
 
   return (
     <section className="px-4 py-8 sm:px-6 lg:px-10">
@@ -163,7 +162,6 @@ function ArticleDetail({ task, post, related, comments }: { task: TaskKey; post:
             <div>
               <div className="flex flex-wrap items-center gap-3 text-[11px] font-bold uppercase tracking-[0.16em]">
                 <span className="rounded-full bg-[var(--slot4-accent-soft)] px-3 py-1 text-[var(--slot4-accent-fill)]">{categoryOf(post, 'News')}</span>
-                {published ? <time className="text-[var(--slot4-soft-muted-text)]">{published}</time> : null}
               </div>
               <h1 className="editorial-brand mt-5 max-w-4xl text-[clamp(3rem,6vw,5.8rem)] font-semibold leading-[0.92] tracking-[-0.06em]">{post.title}</h1>
               {summaryText(post) ? <p className="mt-6 max-w-3xl text-lg leading-9 text-[var(--slot4-muted-text)] sm:text-xl">{summaryText(post)}</p> : null}
@@ -394,7 +392,6 @@ function AboutPanel({ task, post }: { task: TaskKey; post: SitePost }) {
         <p className="inline-flex items-center gap-2"><Tag className="h-4 w-4 text-[var(--slot4-accent-fill)]" /> Task: {taskConfig?.label || task}</p>
         <p className="inline-flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[var(--slot4-accent-fill)]" /> Site: {SITE_CONFIG.name}</p>
         <p className="inline-flex items-center gap-2"><FileText className="h-4 w-4 text-[var(--slot4-accent-fill)]" /> Category: {categoryOf(post, 'Latest')}</p>
-        {post.publishedAt ? <p>Published: {new Date(post.publishedAt).toLocaleDateString()}</p> : null}
       </div>
     </div>
   )
